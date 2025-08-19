@@ -6,7 +6,7 @@ def find_businesses(lat, lon, category, limit=10):
     # Prepare API request parameters for Geoapify Places API
     params = {
         "categories": category,
-        "filter": f"circle:{lon},{lat},1000",  # Search within 1km radius of (lat, lon)
+        "filter": f"circle:{lon},{lat},10000", # Search within a 10km radius
         "limit": limit
     }
     data = make_api_request(PLACES_BASE_URL, params)  # Make API call and get response
